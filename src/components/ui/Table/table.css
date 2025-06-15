@@ -1,0 +1,7 @@
+tr.sticky-hover:hover td {
+    background-color: var(--color-background);
+}
+
+.dark tr.sticky-hover:hover td {
+    background: var(--color-foreground);
+}

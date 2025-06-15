@@ -1,0 +1,117 @@
+@import 'tailwindcss';
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+@theme inline {
+  --color-border: hsl(var(--border) / var(--alpha, 1));
+  --color-input: hsl(var(--input) / var(--alpha, 1));
+  --color-ring: hsl(var(--ring) / var(--alpha, 1));
+  --color-background: hsl(var(--background) / var(--alpha, 1));
+  --color-foreground: hsl(var(--foreground) / var(--alpha, 1));
+
+  --color-primary: hsl(var(--primary) / var(--alpha, 1));
+  --color-primary-foreground: hsl(var(--primary-foreground) / var(--alpha, 1));
+
+  --color-secondary: hsl(var(--secondary) / var(--alpha, 1));
+  --color-secondary-foreground: hsl(
+    var(--secondary-foreground) / var(--alpha, 1)
+  );
+
+  --color-destructive: hsl(var(--destructive) / var(--alpha, 1));
+  --color-destructive-foreground: hsl(
+    var(--destructive-foreground) / var(--alpha, 1)
+  );
+
+  --color-success: hsl(var(--success) / var(--alpha, 1));
+  --color-success-foreground: hsl(var(--success-foreground) / var(--alpha, 1));
+
+  --color-muted: hsl(var(--muted) / var(--alpha, 1));
+  --color-muted-foreground: hsl(var(--muted-foreground) / var(--alpha, 1));
+
+  --color-accent: hsl(var(--accent) / var(--alpha, 1));
+  --color-accent-foreground: hsl(var(--accent-foreground) / var(--alpha, 1));
+
+  --color-popover: hsl(var(--popover) / var(--alpha, 1));
+  --color-popover-foreground: hsl(var(--popover-foreground) / var(--alpha, 1));
+
+  --color-card: hsl(var(--card) / var(--alpha, 1));
+  --color-card-foreground: hsl(var(--card-foreground) / var(--alpha, 1));
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility absolute-fill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@layer base {
+  :root {
+    --background: 195 25% 97%;
+    --foreground: 0 0% 15%;
+    --muted: 0 0% 85%;
+    --muted-foreground: 0 0% 50%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+    --border: 0 0% 80%;
+    --input: 0 0% 72%;
+    --primary: 184.83 89% 38%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45.14 0% 100%;
+    --secondary-foreground: 184.83 89% 38%;
+    --accent: 45.14 94% 54%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 100 77% 44%;
+    --success-foreground: 0 0% 100%;
+    --ring: 187.7 90% 32%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 218 11% 15%;
+    --foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    --popover: 206 15% 19%;
+    --popover-foreground: 315 40% 98%;
+    --card: 0 0% 11%;
+    --card-foreground: 0 0% 100%;
+    --border: 0 0% 19%;
+    --input: 0 0% 21%;
+    --primary: 184.83 77% 30%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 22%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 45.14 79% 49%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 37%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 100 77% 39%;
+    --success-foreground: 0 0% 100%;
+    --ring: 187.7 89% 21%;
+  }
+}
